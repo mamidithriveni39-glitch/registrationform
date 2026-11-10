@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping Registration Form</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f2f2f2;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            min-height:100vh;
+        }
+
+        .container{
+            width:450px;
+            background:#fff;
+            padding:30px;
+            border-radius:10px;
+            box-shadow:0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2{
+            text-align:center;
+            margin-bottom:20px;
+            color:#333;
+        }
+
+        .input-group{
+            margin-bottom:15px;
+        }
+
+        label{
+            display:block;
+            margin-bottom:5px;
+            font-weight:bold;
+        }
+
+        input, select, textarea{
+            width:100%;
+            padding:10px;
+            border:1px solid #ccc;
+            border-radius:5px;
+            font-size:15px;
+        }
+
+        textarea{
+            resize:none;
+        }
+
+        .gender{
+            display:flex;
+            gap:15px;
+            margin-top:8px;
+        }
+
+        .gender label{
+            font-weight:normal;
+        }
+
+        .checkbox{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            margin:15px 0;
+        }
+
+        .checkbox input{
+            width:auto;
+        }
+
+        button{
+            width:100%;
+            padding:12px;
+            background:#007BFF;
+            color:white;
+            border:none;
+            border-radius:5px;
+            font-size:16px;
+            cursor:pointer;
+        }
+
+        button:hover{
+            background:#0056b3;
+        }
+
+        p{
+            text-align:center;
+            margin-top:15px;
+        }
+
+        a{
+            text-decoration:none;
+            color:#007BFF;
+        }
+
+        a:hover{
+            text-decoration:underline;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>User Registration</h2>
+
+<form action="#" method="post">
+
+<div class="input-group">
+<label>Full Name</label>
+<input type="text" name="fullname" placeholder="Enter Full Name" required>
+</div>
+
+<div class="input-group">
+<label>Email Address</label>
+<input type="email" name="email" placeholder="Enter Email" required>
+</div>
+
+<div class="input-group">
+<label>Mobile Number</label>
+<input type="tel" name="mobile" pattern="[0-9]{10}" placeholder="Enter 10 Digit Mobile Number" required>
+</div>
+
+<div class="input-group">
+<label>Date of Birth</label>
+<input type="date" name="dob" required>
+</div>
+
+<div class="input-group">
+<label>Gender</label>
+
+<div class="gender">
+<label><input type="radio" name="gender" value="Male" required> Male</label>
+
+<label><input type="radio" name="gender" value="Female"> Female</label>
+
+<label><input type="radio" name="gender" value="Other"> Other</label>
+</div>
+
+</div>
+
+<div class="input-group">
+<label>Username</label>
+<input type="text" name="username" placeholder="Enter Username" required>
+</div>
+
+<div class="input-group">
+<label>Password</label>
+<input type="password" name="password" minlength="8" placeholder="Enter Password" required>
+</div>
+
+<div class="input-group">
+<label>Confirm Password</label>
+<input type="password" name="confirmPassword" minlength="8" placeholder="Confirm Password" required>
+</div>
+
+<div class="input-group">
+<label>Country</label>
+
+<select required>
+<option value="">Select Country</option>
+<option>India</option>
+<option>USA</option>
+<option>Canada</option>
+<option>Australia</option>
+<option>United Kingdom</option>
+</select>
+
+</div>
+
+<div class="input-group">
+<label>Address</label>
+<textarea rows="4" placeholder="Enter Address"></textarea>
+</div>
+
+<div class="checkbox">
+<input type="checkbox" required>
+<span>I agree to the Terms & Conditions</span>
+</div>
+
+<button type="submit">Register</button>
+
+<p>
+Already have an account?
+<a href="login.html">Login</a>
+</p>
+
+</form>
+
+</div>
+
+<script>
+document.querySelector("form").addEventListener("submit", function(e){
+
+let password = document.querySelector('input[name="password"]').value;
+let confirm = document.querySelector('input[name="confirmPassword"]').value;
+
+if(password !== confirm){
+    alert("Passwords do not match!");
+    e.preventDefault();
+}
+});
+</script>
+
+</body>
+</html>
